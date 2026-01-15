@@ -1,0 +1,22 @@
+.contact{
+    width: 300px;
+    height: 250px;
+    position: fixed;
+    bottom: 1rem; left: 1rem;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(107, 62, 46, 0.85);
+    color: #fff;
+
+}
+.contactP{
+    margin-bottom: 10px;
+}

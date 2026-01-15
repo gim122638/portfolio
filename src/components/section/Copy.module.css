@@ -1,0 +1,178 @@
+.copy{
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.copyWrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.backImg{
+    width: 100%;
+    height: 100vh;
+    opacity: 0.7;
+    position: absolute;
+    z-index: 0;
+}
+
+.mountainWrap{
+    position: absolute;
+    bottom: -11%; right: -1%;
+    z-index: 2;
+    animation: mountainani 2s ease-in-out infinite alternate;
+}
+
+@keyframes mountainani {
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(30px);
+    }
+}
+
+.nav{
+    width: 15rem;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    z-index: 100;
+    margin-top: 90px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: start;
+    align-items: center
+}
+
+.nav p{
+    font-size: 2rem;;
+    transition: all 0.3s linear;
+    color: rgba(107, 62, 46, 0.85);
+    text-shadow: 1px 1px 2px rgba(74, 42, 31, 0.3);
+    cursor: pointer;
+}
+
+.nav p:hover{
+    margin-right: 70px;
+    transform: scale(1.4);
+    text-shadow: 1px 1px 2px rgba(74, 42, 31, 0.6);
+}
+
+.main{
+    width: calc(100vw - 15rem);
+    height: 100%;
+}
+
+.erom{
+    position: relative;
+    text-align: center;
+    font-size: 3rem;
+    z-index: 2;
+    color: rgba(124, 108, 103, 0.85);
+    cursor: pointer;
+}
+
+.erom:hover{
+    color: rgba(83, 73, 70, 0.85);
+}
+
+.line{
+    width: 75%;
+    height: 4px;
+    background-color: rgba(116, 71, 55, 0.85);
+    margin-top: 0.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 메인 */
+.eromOutbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.eromInbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.eromText{
+    width: 40rem;
+    text-align: center;
+}
+.eromText h4{
+    font-size: 5rem;
+}
+.eromTextP1{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.eromTextP2{
+    font-size: 2rem;
+}
+.eromText a{
+    list-style: none;
+    text-decoration: none;
+    color: #333;
+}
+.eromText a:hover{
+    color: rgba(116, 71, 55, 0.85);
+}
+.eromImgbox{
+    margin-top: 5rem;
+}
+
+/* woodin */
+.woodinOutbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.woodinInbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.woodinText{
+    width: 30rem;
+    text-align: center;
+    margin-left: 10rem;
+}
+.woodinText h4{
+    font-size: 5rem;
+}
+.woodinTextP1{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.woodinTextP2{
+    font-size: 2rem;
+}
+.woodinText a{
+    list-style: none;
+    text-decoration: none;
+    color: #333;
+}
+.woodinText a:hover{
+    color: rgba(116, 71, 55, 0.85);
+}
+.woodinImgbox{
+    width: 60rem;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

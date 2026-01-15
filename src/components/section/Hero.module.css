@@ -1,0 +1,166 @@
+.hero {
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    position: relative;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #f7f3ea 0%,
+            #f2eee4 100%
+        );
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+        /* 1️⃣ 섬유 결 (세로) */
+        repeating-linear-gradient(
+            90deg,
+            rgba(0,0,0,0.018),
+            rgba(0,0,0,0.018) 1px,
+            transparent 1px,
+            transparent 6px
+        ),
+
+        /* 2️⃣ 섬유 결 (사선) */
+        repeating-linear-gradient(
+            -45deg,
+            rgba(0,0,0,0.012),
+            rgba(0,0,0,0.012) 1px,
+            transparent 1px,
+            transparent 8px
+        ),
+
+        /* 3️⃣ 얼룩 / 번짐 */
+        radial-gradient(
+            circle at 25% 30%,
+            rgba(0,0,0,0.05),
+            transparent 45%
+        ),
+
+        radial-gradient(
+            circle at 75% 65%,
+            rgba(0,0,0,0.035),
+            transparent 50%
+        );
+
+    opacity: 0.6;
+}
+
+.backImg{
+    opacity: 0.5;
+    position: relative;
+    z-index: 0;
+    margin-bottom: 20%;
+    max-width: 1300px;
+    min-width: 800px;
+    max-height: 700px;
+}
+
+.shipImg{
+    opacity: 0.7;
+    position: absolute;
+    z-index: 5;
+    bottom: 0; right: 20%;
+    animation: shipFloat 2.8s ease-in-out infinite alternate;
+}
+
+@keyframes shipFloat {
+    from { transform: translateY(1px); }
+    to   { transform: translateY(-2px); }
+}
+
+.shipWrap{
+    animation: shipani 7s ease-in-out infinite alternate;
+}
+
+@keyframes shipani {
+    0%{
+        transform:
+            translateX(100px)
+            translateY(0px)
+            rotate(-0.6deg);
+    }
+    100%{
+        transform:
+            translateX(-100px)
+            translateY(2px)
+            rotate(-0.6deg);
+    }
+}
+
+.textbox{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.herotext{
+    position: relative;
+    z-index: 3;
+    font-size: 5rem;
+}
+
+.gatWrap {
+    position: absolute;
+    top: 40%; left: 58%;
+    z-index: 1; 
+    opacity: 0.7;
+    animation: gatani 5s ease-in-out infinite alternate;
+}
+
+@keyframes gatani {
+    from{
+        transform: translateX(-50px);
+    }
+    to{
+        transform: translateX(-370px);
+    }
+}
+
+.tigerWrap{
+    position: absolute;
+    bottom: 0; left: 2%;
+    z-index: 999;
+    animation: tigerani 1s ease-in-out infinite alternate;
+}
+
+@keyframes tigerani {
+    from{
+        transform: translateY(5px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+.scroll{
+    position: absolute;
+    bottom: 5%; left: 50%;
+    transform: translateX(-50%);
+    animation: scrollani 1s ease-in-out infinite alternate;
+}
+
+@keyframes scrollani {
+    from{
+        transform: translateY(10px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}

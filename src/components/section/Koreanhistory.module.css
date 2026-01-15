@@ -1,0 +1,144 @@
+.koreanhistory{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    overflow: hidden;
+}
+
+.backImg{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.7;
+    position: absolute;
+    z-index: 0;
+}
+
+.mountainWrap{
+    position: absolute;
+    bottom: -11%; right: -1%;
+    z-index: 2;
+    animation: mountainani 2s ease-in-out infinite alternate;
+}
+
+@keyframes mountainani {
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(30px);
+    }
+}
+
+.nav{
+    width: 15rem;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    z-index: 100;
+    margin-top: 90px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: start;
+    align-items: center
+}
+
+.nav p{
+    font-size: 2rem;;
+    transition: all 0.3s linear;
+    color: rgba(107, 62, 46, 0.85);
+    text-shadow: 1px 1px 2px rgba(74, 42, 31, 0.3);
+    cursor: pointer;
+}
+
+.nav p:hover{
+    margin-right: 70px;
+    transform: scale(1.4);
+    text-shadow: 1px 1px 2px rgba(74, 42, 31, 0.6);
+}
+
+.main{
+    width: calc(100vw - 15rem);
+    height: 100%;
+}
+
+.title{
+    position: relative;
+    text-align: center;
+    font-size: 3rem;
+    z-index: 2;
+    color: rgba(124, 108, 103, 0.85);
+    cursor: pointer;
+}
+
+.title:hover{
+    color: rgba(83, 73, 70, 0.85);
+}
+
+.line{
+    width: 75%;
+    height: 4px;
+    background-color: rgba(116, 71, 55, 0.85);
+    margin-top: 0.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 메인 */
+.skillStack{
+    position: relative;
+    z-index: 2;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    margin-left: 12rem;
+}
+
+.historyOutbox{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.historyInbox1{
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+.historyInbox2{
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+.historyText{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.historyText p{
+    font-size: 2rem;
+    position: relative;
+    z-index: 50;
+}
+.historyText a{
+    list-style: none;
+    text-decoration: none;
+    color: #333;
+}
+.mobileText a{
+    color: #fff;
+}
+.historyText a:hover{
+    color: rgba(116, 71, 55, 0.85);
+}
