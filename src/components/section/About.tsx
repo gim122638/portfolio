@@ -230,15 +230,15 @@ const About = () => {
         <p className={styles.title} ref={titleRef}>“견디는 능력도 실력이다.”</p>
         
         <div className={styles.box3} ref={box3Ref}>
-          <div className={styles.box3_inbox1} ref={(el) => (box3ItemsRef.current[0] = el!)}>
+          <div className={styles.box3_inbox1} ref={(el) => {box3ItemsRef.current[0] = el!}}>
             <p>보이는 화면 너머의 경험을 고민하며, 꾸준히 성장하는 프론트엔드 신입 개발자입니다.</p>
           </div>
 
-          <div className={styles.box3_inbox2} ref={(el) => (box3ItemsRef.current[1] = el!)}>
+          <div className={styles.box3_inbox2} ref={(el) => {box3ItemsRef.current[1] = el!}}>
             <p>화면 속 작은 움직임에도 이야기를 담고 싶습니다.</p>
           </div>
 
-          <div className={styles.box3_inbox3} ref={(el) => (box3ItemsRef.current[2] = el!)}>
+          <div className={styles.box3_inbox3} ref={(el) => {box3ItemsRef.current[2] = el!}}>
             <p>기억에 남는 경험을 만드는 개발자가 되는 것이 목표입니다.</p>
           </div>
         </div>

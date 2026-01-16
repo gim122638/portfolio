@@ -37,7 +37,7 @@ const Works = () => {
   const shoppingmallRef = useRef<HTMLDivElement | null>(null)
   const copyRef = useRef<HTMLDivElement | null>(null)
 
-  const sectionMap: Record<string, React.RefObject<HTMLDivElement>> = {
+  const sectionMap: Record<string, React.RefObject<HTMLDivElement | null>> = {
     seoultour: seoulTourRef,
     koreanhistory: koreanhistoryRef,
     teamproject: teamprojectRef,
