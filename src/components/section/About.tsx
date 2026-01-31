@@ -59,73 +59,60 @@ const About = () => {
         )
 
       // 먹물 애니메이션
-      gsap.timeline({
-        repeat: -1,
-        delay: 0.2,
-      })
-      .fromTo(
-        dot1Ref.current,
-        {
-          y: -80,
-          opacity: 0,
-          scale: 0.85,
+      gsap.timeline()
+        .fromTo(
+          dot1Ref.current,
+          {
+            y: -80,
+            opacity: 0,
+            scale: 0.85,
+            filter: 'blur(2px)',
+          },
+          {
+            y: 10,
+            opacity: 0.8,
+            scale: 1,
+            filter: 'blur(0px)',
+            duration: 0.9,
+            ease: 'power2.in',
+          }
+        )
+        .to(dot1Ref.current, {
+          y: 25,
+          scale: 1.05,
+          opacity: 0.6,
           filter: 'blur(2px)',
-        },
-        {
-          y: 10,
-          opacity: 0.8,
-          scale: 1,
-          filter: 'blur(0px)',
-          duration: 0.9,
-          ease: 'power2.in',
-        }
-      )
-      .to(dot1Ref.current, {
-        y: 25,
-        scale: 1.1,
-        opacity: 0.4,
-        filter: 'blur(3px)',
-        duration: 1.2,
-        ease: 'power1.out',
-      })
-      .to(dot1Ref.current, {
-        opacity: 0,
-        duration: 0.6,
-      })
-
-      gsap.timeline({
-        repeat: -1,
-        delay: 0.6,
-      })
-      .fromTo(
-        dot2Ref.current,
-        {
-          y: -120,
-          opacity: 0,
-          scale: 0.8,
-          filter: 'blur(3px)',
-        },
-        {
-          y: 20,
-          opacity: 0.7,
-          scale: 1,
-          filter: 'blur(0px)',
           duration: 1.2,
-          ease: 'power2.in',
-        }
-      )
-      .to(dot2Ref.current, {
-        y: 40,
-        scale: 1.15,
-        opacity: 0.35,
-        filter: 'blur(4px)',
-        duration: 1.5,
-        ease: 'power1.out',
-      })
-      .to(dot2Ref.current, {
-        opacity: 0,
-        duration: 0.7,
-      })
+          ease: 'power1.out',
+        })
+
+      gsap.timeline({ delay: 0.4 })
+        .fromTo(
+          dot2Ref.current,
+          {
+            y: -120,
+            opacity: 0,
+            scale: 0.8,
+            filter: 'blur(3px)',
+          },
+          {
+            y: 20,
+            opacity: 0.7,
+            scale: 1,
+            filter: 'blur(0px)',
+            duration: 1.2,
+            ease: 'power2.in',
+          }
+        )
+        .to(dot2Ref.current, {
+          y: 40,
+          scale: 1.1,
+          opacity: 0.5,
+          filter: 'blur(3px)',
+          duration: 1.5,
+          ease: 'power1.out',
+        })
+
 
       // 소개글 애니메이션
       const introTl = gsap.timeline({

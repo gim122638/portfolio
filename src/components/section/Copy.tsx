@@ -112,7 +112,8 @@ type CopyProps = {
           src="/img/works_mountain.png" 
           alt='산 이미지' 
           width={850} 
-          height={550} 
+          height={550}
+          priority
         /> 
       </div> 
       
@@ -148,16 +149,22 @@ type CopyProps = {
             </div> 
             
             <div className={styles.eromImgbox}> 
-              <div className={styles.eromwrap}> 
-                <Image 
-                  className={styles.eromframe} 
-                  ref={eromRef} 
-                  src="/img/copy_frame_erom.png"
-                  alt='이롬 pc 프레임'
-                  width={900} 
-                  height={700} 
-                /> 
-              </div> 
+              <div className={styles.frameBox}>
+                <Link
+                  href="https://gim122638.github.io/erom05/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    className={styles.frameImg}
+                    ref={eromRef}
+                    src="/img/copy_frame_erom.png"
+                    alt="이롬 pc 프레임"
+                    width={1500} 
+                    height={800}
+                  />
+                </Link>
+              </div>
             </div> 
           </div> 
         </div> 
@@ -180,7 +187,8 @@ type CopyProps = {
           src="/img/works_mountain.png" 
           alt='산 이미지' 
           width={850} 
-          height={550} 
+          height={550}
+          priority
         /> 
       </div> 
 
@@ -203,7 +211,7 @@ type CopyProps = {
             <div className={styles.woodinText}> 
               <h4>woodin</h4> 
               <p className={styles.woodinTextP1}>사용 기술 : HTML, CSS, JavaScript</p> 
-              <p className={styles.woodinTextP1}>중점 기술 : Popup</p> 
+              <p className={styles.woodinTextP1}>중점 기술 : PopUp</p> 
               <p className={styles.woodinTextP2}><Link href='https://gim122638.github.io/erom05/'>PC 버전</Link></p> 
               <Image
                 src="/img/skill_mouse.png"
@@ -216,16 +224,22 @@ type CopyProps = {
             </div> 
             
             <div className={styles.woodinImgbox}> 
-              <div className={styles.woodinwrap}> 
-                <Image 
-                  className={styles.woodinframe} 
-                  ref={woodinRef} 
-                  src="/img/copy_frame_woodin.png" 
-                  alt='우딘 pc 프레임' 
-                  width={1500} 
-                  height={800} 
-                />
-              </div> 
+              <div className={styles.frameBox}>
+                <Link
+                  href="https://gim122638.github.io/erom05/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    className={styles.frameImg}
+                    ref={woodinRef}
+                    src="/img/copy_frame_woodin.png"
+                    alt="우딘 pc 프레임"
+                    width={1700} 
+                    height={900}
+                  />
+                </Link>
+              </div>
             </div> 
           </div> 
         </div> 

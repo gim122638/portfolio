@@ -102,28 +102,34 @@ const Guestbook = React.forwardRef<HTMLDivElement, GuestbookProps>(({ onNavigate
           <div className={styles.guestbookOutbox}>
             <div className={styles.guestbookInbox}>
               <div className={styles.guestbookText}>
-                <h4>guestbook</h4>
+
                 <p className={styles.guestbookTextP1}>사용 기술 : React, Node.js, <br/>GCP(Cloud Run, Cloud SQL), MYSQL, DBeaver</p>
                 <p className={styles.guestbookTextP2}><Link href='https://project00-251579475611.us-central1.run.app/'>PC 버전</Link></p>
-                <Image
-                  src="/img/skill_mouse.png"
-                  className={styles.mouse}
-                  ref={mouseRef}
-                  alt='마우스 커서 이미지'
-                  width={30}
-                  height={30}
-                />
+                  <Image
+                    src="/img/skill_mouse.png"
+                    className={styles.mouse}
+                    ref={mouseRef}
+                    alt='마우스 커서 이미지'
+                    width={30}
+                    height={30}
+                  />
               </div>
               <div className={styles.guestbookImgbox}>
-                <div className={styles.guestbookwrap}>
-                  <Image
-                    className={styles.guestbookframe}
-                    ref={guestbookRef}
-                    src="/img/guestbook_frame_pc.png"
-                    alt='방명록 pc 프레임'
-                    width={1350}
-                    height={800}
-                  />
+                <div className={styles.frameBox}>
+                  <Link
+                    href="https://project00-251579475611.us-central1.run.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      className={styles.frameImg}
+                      ref={guestbookRef}
+                      src="/img/guestbook_frame_pc.png"
+                      alt='방명록 pc 프레임'
+                      width={1350}
+                      height={800}
+                    />
+                  </Link>
                 </div>
               </div>
 

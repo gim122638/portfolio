@@ -1,31 +1,44 @@
 .copy{
     width: 100%;
-    min-height: 100vh;
+    min-height: 100svh;
     overflow: hidden;
     position: relative;
     background-color: #fff;
-    overflow: hidden;
 }
 
 .copyWrapper {
-    height: 100vh;
+    height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
 .backImg{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     opacity: 0.7;
+    object-fit: cover;
     position: absolute;
+    inset: 0;
     z-index: 0;
+}
+@media (min-width: 1024px){
+    .backImg{
+        height: 100%;
+        object-position: center top;
+    }
 }
 
 .mountainWrap{
     position: absolute;
-    bottom: -11%; right: -1%;
+    bottom: -8%; right: -3%;
     z-index: 2;
+    width: clamp(280px, 40vw, 850px);
     animation: mountainani 2s ease-in-out infinite alternate;
+}
+
+.mountain{
+    width: 100%;
+    height: auto;
 }
 
 @keyframes mountainani {
@@ -52,6 +65,12 @@
     align-items: center
 }
 
+@media (max-width: 480px){
+    .nav{
+        display: none;
+    }
+}
+
 .nav p{
     font-size: 2rem;;
     transition: all 0.3s linear;
@@ -67,14 +86,14 @@
 }
 
 .main{
-    width: calc(100vw - 15rem);
+    width: 100%;
     height: 100%;
 }
 
 .erom{
     position: relative;
     text-align: center;
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 5vw, 3rem);
     z-index: 2;
     color: rgba(124, 108, 103, 0.85);
     cursor: pointer;
@@ -86,7 +105,7 @@
 
 .line{
     width: 75%;
-    height: 4px;
+    height: 0.2rem;
     background-color: rgba(116, 71, 55, 0.85);
     margin-top: 0.5rem;
     position: absolute;
@@ -95,84 +114,81 @@
 }
 
 /* 메인 */
-.eromOutbox{
+.eromOutbox, .woodinOutbox{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
 }
-.eromInbox{
+.eromInbox, .woodinInbox{
+    width: 95%;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
+    flex-wrap: nowrap;
     z-index: 2;
-}
-.eromText{
-    width: 40rem;
-    text-align: center;
-}
-.eromText h4{
-    font-size: 5rem;
-}
-.eromTextP1{
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-.eromTextP2{
-    font-size: 2rem;
-}
-.eromText a{
-    list-style: none;
-    text-decoration: none;
-    color: #333;
-}
-.eromText a:hover{
-    color: rgba(116, 71, 55, 0.85);
-}
-.eromImgbox{
-    margin-top: 5rem;
 }
 
-/* woodin */
-.woodinOutbox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+@media (max-width: 480px){
+    .eromInbox, .woodinInbox{
+         flex-wrap: wrap;
+    }
 }
-.woodinInbox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-}
-.woodinText{
-    width: 30rem;
+
+.eromText, .woodinText{
+    width: 100%;
+    max-width: 480px;
     text-align: center;
-    margin-left: 10rem;
+    margin-top: 2rem;
 }
-.woodinText h4{
-    font-size: 5rem;
+.eromText h4, .woodinText h4 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
 }
-.woodinTextP1{
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+
+.eromTextP1, .woodinTextP1 {
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    margin-bottom: 0.8rem;
 }
-.woodinTextP2{
-    font-size: 2rem;
+
+.eromTextP2, .woodinTextP2 {
+    font-size: clamp(1.2rem, 4vw, 2rem);
 }
-.woodinText a{
+
+.eromText a, .woodinText a{
     list-style: none;
     text-decoration: none;
     color: #333;
 }
-.woodinText a:hover{
+.eromText a:hover, .woodinText a:hover{
     color: rgba(116, 71, 55, 0.85);
 }
-.woodinImgbox{
-    width: 60rem;
-    margin-top: 5rem;
+.eromImgbox, .woodinImgbox{
+    width: min(100%, 60rem);
+    margin: 3rem 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 3rem;
+}
+@media (max-width: 480px){
+    .eromImgbox, .woodinImgbox{
+        margin-top: none;
+    }
+}
+
+.frameBox {
+    width: 100%;
+    max-width: 1800px;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+}
+
+.frameImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }

@@ -86,89 +86,84 @@ const Skill = () => {
     )
   }, [])
 
-  // 카드 뒤집어질 때 로고 애니메이션
+  // 카드 호버
   useEffect(() => {
-    if (!sectionRef.current) return
+  cardRef.current.forEach((card) => {
+    if (!card) return
 
-    const CARD_DURATION = 2.5
-    const TOTAL = cardRef.current.length * CARD_DURATION
+    const inner = card.querySelector(`.${styles.cardInner}`)
+    const logos = card.querySelectorAll(`.${styles.logoWrap} img`)
+    const items = card.querySelectorAll(`.${styles.list} li`)
 
-    const master = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: 'top top',
-        end: `+=${TOTAL * 200}`,
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
+    // 초기 상태
+    gsap.set(inner, { rotateY: 0 })
+    gsap.set(logos, { y: -40, opacity: 0, scale: 1 })
+    gsap.set(items, { y: 10, opacity: 0 })
+
+    const tl = gsap.timeline({ paused: true })
+
+    // 카드 뒤집기
+    tl.to(inner, {
+      rotateY: 180,
+      duration: 0.6,
+      ease: 'power2.inOut',
+    })
+
+    // 로고 등장
+    tl.to(
+      logos,
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.08,
+        duration: 0.4,
+        ease: 'back.out(1.7)',
       },
-    })
+      '-=0.2'
+    )
 
-    cardRef.current.forEach((card, idx) => {
-      if (!card) return
+    // 리스트 등장
+    tl.to(
+      items,
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.06,
+        duration: 0.3,
+        ease: 'power2.out',
+      },
+      '-=0.2'
+    )
 
-      const inner = card.querySelector(`.${styles.cardInner}`)
-      const logos = card.querySelectorAll(`.${styles.logoWrap} img`)
-      const items = card.querySelectorAll(`.${styles.list} li`)
+    // 로고 살짝 pulse
+    tl.to(
+      logos,
+      {
+        scale: 1.15,
+        duration: 0.4,
+        yoyo: true,
+        repeat: -1,
+        stagger: 0.08,
+        ease: 'power1.inOut',
+      },
+      '+=0.1'
+    )
 
-      gsap.set(inner, { rotateY: 0 })
-      gsap.set(logos, { y: -60, opacity: 0, scale: 1 })
-      gsap.set(items, { y: 10, opacity: 0 })
 
-      const tl = gsap.timeline()
+    // hover 이벤트
+    const onEnter = () => tl.play()
+    const onLeave = () => tl.reverse()
 
-      // 카드 뒤집기
-      tl.to(inner, {
-        rotateY: 180,
-        duration: 0.8,
-        ease: 'power2.inOut',
-      })
+    card.addEventListener('mouseenter', onEnter)
+    card.addEventListener('mouseleave', onLeave)
 
-      // 로고 낙하
-      tl.fromTo(
-        logos,
-        { y: -60, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.1,
-          duration: 0.6,
-          ease: 'bounce.out',
-        },
-        '-=0.3'
-      )
-
-      // 로고 pulse
-      tl.to(
-        logos,
-        {
-          scale: 1.15,
-          duration: 0.6,
-          yoyo: true,
-          repeat: 2,
-          ease: 'power1.inOut',
-          stagger: 0.1,
-        },
-        '+=0.1'
-      )
-
-      // li 등장
-      tl.fromTo(
-        items,
-        { y: 10, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.1,
-          duration: 0.4,
-          ease: 'power2.out',
-        },
-        '-=0.3'
-      )
-
-      master.add(tl, idx * CARD_DURATION)
-    })
-  }, [])
+    // cleanup
+    return () => {
+      card.removeEventListener('mouseenter', onEnter)
+      card.removeEventListener('mouseleave', onLeave)
+    }
+  })
+}, [])
 
 
 

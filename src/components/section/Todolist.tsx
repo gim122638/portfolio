@@ -114,14 +114,20 @@ const Todolist = React.forwardRef<HTMLDivElement, TodolistProps>(({ onNavigate }
           <div className={styles.todolistInbox1}>
             <div className={styles.todolistImgbox}>
               <div className={styles.todolistwrap}>
-                <Image
-                  className={styles.todolistframe}
-                  ref={pcRef}
-                  src="/img/todolist_frame_pc1.png"
-                  alt='todo list pc 프레임'
-                  width={1200}
-                  height={680}
-                />
+                <Link
+                  href="https://natodo-zeta.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    className={styles.todolistframe}
+                    ref={pcRef}
+                    src="/img/todolist_frame_pc1.png"
+                    alt='todo list pc 프레임'
+                    width={1200}
+                    height={680}
+                  />
+                </Link>
               </div>
               <div className={styles.todolistText}>
                 <p><Link href='https://natodo-zeta.vercel.app/'>PC 버전</Link></p>
@@ -140,17 +146,24 @@ const Todolist = React.forwardRef<HTMLDivElement, TodolistProps>(({ onNavigate }
           <div className={styles.todolistInbox2}>
             <div className={styles.todolistImgbox}>
               <div className={styles.todolistwrap}>
-                <Image
-                  src="/img/todolist_frame_mobile1.gif"
-                  ref={mobileRef}
-                  alt="todo list 모바일 프레임"
-                  width={370}
-                  height={640}
-                  unoptimized
-                />
+                <Link
+                  href="https://natodo-zeta.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    className={styles.todolistframe2}
+                    src="/img/todolist_frame_mobile1.gif"
+                    ref={mobileRef}
+                    alt="todo list 모바일 프레임"
+                    width={370}
+                    height={640}
+                    unoptimized
+                  />
+                </Link>
               </div>
               <div className={`${styles.todolistText} ${styles.mobileText}`}>
-                <p><Link href='https://gim122638.github.io/project05/index02.html'>mobile 버전</Link></p>
+                <p><Link href='https://natodo-zeta.vercel.app/'>mobile 버전</Link></p>
               </div>
             </div>
           </div>

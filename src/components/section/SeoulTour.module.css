@@ -1,25 +1,39 @@
 .seoultour{
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100svh;
     position: relative;
     overflow: hidden;
 }
 
 .backImg{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     opacity: 0.7;
+    object-fit: cover;
     position: absolute;
+    inset: 0;
     z-index: 0;
+}
+@media (min-width: 1024px){
+    .backImg{
+        height: 100%;
+        object-position: center top;
+    }
 }
 
 .mountainWrap{
     position: absolute;
-    bottom: -11%; right: -1%;
+    bottom: -8%; right: -3%;
     z-index: 2;
+    width: clamp(280px, 40vw, 850px);
     animation: mountainani 2s ease-in-out infinite alternate;
 }
+
+.mountain{
+    width: 100%;
+    height: auto;
+}
+
 
 @keyframes mountainani {
     from{
@@ -45,6 +59,12 @@
     align-items: center
 }
 
+@media (max-width: 480px){
+    .nav{
+        display: none;
+    }
+}
+
 .nav p{
     font-size: 2rem;;
     transition: all 0.3s linear;
@@ -60,14 +80,15 @@
 }
 
 .main{
-    width: calc(100vw - 15rem);
+    width: 100%;
+    padding: 2rem 3vw;
     height: 100%;
 }
 
 .title{
     position: relative;
     text-align: center;
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 5vw, 3rem);
     z-index: 2;
     color: rgba(124, 108, 103, 0.85);
     cursor: pointer;
@@ -79,7 +100,7 @@
 
 .line{
     width: 75%;
-    height: 4px;
+    height: 0.2rem;
     background-color: rgba(116, 71, 55, 0.85);
     margin-top: 0.5rem;
     position: absolute;
@@ -91,32 +112,48 @@
 .skillStack{
     position: relative;
     z-index: 2;
-    font-size: 1.8rem;
-    margin-top: 1rem;
-    margin-left: 12rem;
+    font-size: clamp(0.9rem, 2.5vw, 1.8rem);
+    margin: clamp(1rem, 4vw, 2rem) auto;
+    text-align: center;
 }
 
 .travelOutbox{
-    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 2rem; 
 }
-.travelInbox1{
-    width: 50rem;
+.travelInbox1, .travelInbox2{
+    width: clamp(400px, 42vw, 70rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 5;
 }
-.travelInbox2{
-    width: 50rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 5;
+@media (min-width: 1024px){
+    .travelOutbox{
+        flex-wrap: nowrap;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+    .travelInbox1,
+    .travelInbox2{
+        width: 70%;
+        max-width: none;
+        height: auto;
+    }
+}
+
+.travelframe{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
 }
 .travelText{
     text-align: center;
@@ -126,7 +163,7 @@
     gap: 30px;
 }
 .travelText p{
-    font-size: 2rem;
+    font-size: clamp(1rem, 3vw, 2rem);
     position: relative;
     z-index: 50;
 }
@@ -140,4 +177,16 @@
 }
 .travelText a:hover{
     color: rgba(116, 71, 55, 0.85);
+}
+
+@media (max-width: 480px){
+    .skillStack{
+        margin-left: 0;
+    }
+
+    .mountainWrap{
+        bottom: -15%;
+        right: -15%;
+        opacity: 0.6;
+    }
 }

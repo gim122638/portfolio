@@ -114,15 +114,21 @@ const Shoppingmall = React.forwardRef<HTMLDivElement, ShoppingmallProps>(({ onNa
                         />
                     </div>
                     <div className={styles.shoppingmallImgbox}>
-                        <div className={styles.shoppingmallwrap}>
-                        <Image
-                            className={styles.shoppingmallframe}
-                            ref={shoppingRef}
-                            src="/img/shoppingmall_frame_pc.png"
-                            alt='방명록 pc 프레임'
-                            width={1400}
-                            height={800}
-                        />
+                        <div className={styles.frameBox}>
+                            <Link
+                                href="https://gim122638.github.io/rets01/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Image
+                                    className={styles.frameImg}
+                                    ref={shoppingRef}
+                                    src="/img/shoppingmall_frame_pc.png"
+                                    alt='방명록 pc 프레임'
+                                    width={1400}
+                                    height={800}
+                                />
+                            </Link>
                         </div>
                     </div>
 

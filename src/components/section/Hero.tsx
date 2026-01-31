@@ -72,41 +72,6 @@ const Hero = () => {
         )
     }, [])
 
-    // // 전체 스크롤 애니메이션
-    // useEffect(() => {
-    //     if (!sectionRef.current) return
-
-    //     const nextSection = document.querySelector<HTMLElement>('#about')
-    //     if (!nextSection) return
-
-    //     gsap.set(nextSection, {
-    //         yPercent: 100,
-    //     })
-
-    //     const tl = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: sectionRef.current,
-    //             start: 'top top',
-    //             end: '+=1',          // 스크롤 거의 안 씀
-    //             pin: true,
-    //             scrub: false,
-    //             toggleActions: 'play none none reverse',
-    //         },
-    //     })
-
-    //     tl.to(nextSection, {
-    //         yPercent: 0,
-    //         duration: 0.8,
-    //         ease: 'power3.inOut',
-    //     })
-
-    //     return () => {
-    //         tl.scrollTrigger?.kill()
-    //         tl.kill()
-    //     }
-    //     }, [])
-
-
   return (
     <section id='hero' className={`${styles.hero} hanji`} ref={sectionRef}>
         <div className={styles.container}>
@@ -114,8 +79,9 @@ const Hero = () => {
                 className={styles.backImg}
                 src="/img/main_backimg.png"
                 alt='수묵화 이미지'
-                width={1300}
-                height={700}
+                fill
+                priority
+                sizes="100vw"
             />
             <div className={styles.shipWrap} ref={shipRef}>
                 <Image

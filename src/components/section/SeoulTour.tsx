@@ -104,49 +104,61 @@ const SeoulTour = React.forwardRef<HTMLDivElement, SeoulTourProps>(({ onNavigate
                     </p>
 
                     <div className={styles.travelOutbox}>
-                    <div className={styles.travelInbox1}>
-                        <div className={styles.travelImgbox}>
-                        <div className={styles.travelwrap}>
-                            <Image
-                            className={styles.travelframe}
-                            ref={pcRef}
-                            src="/img/seoultour_frame_pc.png"
-                            alt='서울여행 pc 프레임'
-                            width={1200}
-                            height={700}
-                            />
+                        <div className={styles.travelInbox1}>
+                            <div className={styles.travelImgbox}>
+                                <div className={styles.travelwrap}>
+                                    <Link
+                                        href="https://gim122638.github.io/project05/index.html"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <Image
+                                            className={styles.travelframe}
+                                            ref={pcRef}
+                                            src="/img/seoultour_frame_pc.png"
+                                            alt='서울여행 pc 프레임'
+                                            width={1500}
+                                            height={800}
+                                        />
+                                    </Link>
+                                </div>
+                                <div className={styles.travelText}>
+                                    <p><Link href='https://gim122638.github.io/project05/index.html'>PC 버전</Link></p>
+                                    <Image
+                                        src="/img/skill_mouse.png"
+                                        className={styles.mouse}
+                                        ref={mouseRef}
+                                        alt='마우스 커서 이미지'
+                                        width={30}
+                                        height={30}
+                                    />
+                                </div>
+                            </div>
                         </div>
-                        <div className={styles.travelText}>
-                            <p><Link href='https://gim122638.github.io/project05/index.html'>PC 버전</Link></p>
-                            <Image
-                                src="/img/skill_mouse.png"
-                                className={styles.mouse}
-                                ref={mouseRef}
-                                alt='마우스 커서 이미지'
-                                width={30}
-                                height={30}
-                            />
-                        </div>
-                        </div>
-                    </div>
 
-                    <div className={styles.travelInbox2}>
-                        <div className={styles.travelImgbox}>
-                        <div className={styles.travelwrap}>
-                            <Image
-                            className={styles.travelframe}
-                            ref={mobileRef}
-                            src="/img/seoultour_frame_mobile1.png"
-                            alt='서울여행 모바일 프레임'
-                            width={1300}
-                            height={700}
-                            />
+                        <div className={styles.travelInbox2}>
+                            <div className={styles.travelImgbox}>
+                            <div className={styles.travelwrap}>
+                                <Link
+                                    href="https://gim122638.github.io/project05/index02.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Image
+                                        className={styles.travelframe}
+                                        ref={mobileRef}
+                                        src="/img/seoultour_frame_mobile1.png"
+                                        alt='서울여행 모바일 프레임'
+                                        width={1300}
+                                        height={700}
+                                    />
+                                </Link>
+                            </div>
+                            <div className={`${styles.travelText} ${styles.mobileText}`}>
+                                <p><Link href='https://gim122638.github.io/project05/index02.html'>mobile 버전</Link></p>
+                            </div>
+                            </div>
                         </div>
-                        <div className={`${styles.travelText} ${styles.mobileText}`}>
-                            <p><Link href='https://gim122638.github.io/project05/index02.html'>mobile 버전</Link></p>
-                        </div>
-                        </div>
-                    </div>
 
                     </div>
 

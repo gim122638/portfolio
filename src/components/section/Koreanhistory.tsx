@@ -114,14 +114,20 @@ const Koreanhistory = React.forwardRef<HTMLDivElement, KoreanhistoryProps>(({ on
           <div className={styles.historyInbox1}>
             <div className={styles.historyImgbox}>
               <div className={styles.historywrap}>
-                <Image
-                  className={styles.historyframe}
-                  ref={pcRef}
-                  src="/img/koreanhistory_frame_pc1.png"
-                  alt='한능검 pc 프레임'
-                  width={1200}
-                  height={700}
-                />
+                <Link
+                  href="https://gim122638.github.io/vide02/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    className={styles.historyframe}
+                    ref={pcRef}
+                    src="/img/koreanhistory_frame_pc1.png"
+                    alt='한능검 pc 프레임'
+                    width={1200}
+                    height={700}
+                  />
+                </Link>
               </div>
               <div className={styles.historyText}>
                 <p><Link href='https://gim122638.github.io/vide02/'>PC 버전</Link></p>
@@ -140,14 +146,20 @@ const Koreanhistory = React.forwardRef<HTMLDivElement, KoreanhistoryProps>(({ on
           <div className={styles.historyInbox2}>
             <div className={styles.historyImgbox}>
               <div className={styles.historywrap}>
-                <Image
-                  className={styles.historyframe}
-                  ref={mobileRef}
-                  src="/img/koreanhistory_frame_mobile.png"
-                  alt='한능검 모바일 프레임'
-                  width={1300}
-                  height={700}
-                />
+                <Link
+                  href="https://gim122638.github.io/vide02/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    className={styles.historyframe}
+                    ref={mobileRef}
+                    src="/img/koreanhistory_frame_mobile.png"
+                    alt='한능검 모바일 프레임'
+                    width={1300}
+                    height={700}
+                  />
+                </Link>
               </div>
               <div className={`${styles.historyText} ${styles.mobileText}`}>
                 <p><Link href='https://gim122638.github.io/vide02/'>mobile 버전</Link></p>

@@ -107,21 +107,27 @@ const Teamproject = React.forwardRef<HTMLDivElement, TeamprojectProps>(({ onNavi
         <div className={styles.line}></div>
 
         <div className={styles.skillStack}>
-          중점 기술 : Scroll Event, JSON, API
+          중점 기술 : Scroll Event, JSON, API / GitHub(team)
         </div>
 
         <div className={styles.teamOutbox}>
           <div className={styles.teamInbox1}>
             <div className={styles.teamImgbox}>
               <div className={styles.teamwrap}>
-                <Image
-                  className={styles.teamframe}
-                  ref={pcRef}
-                  src="/img/teamproject_frame_pc.png"
-                  alt='팀프로젝트 pc 프레임'
-                  width={1200}
-                  height={700}
-                />
+                <Link
+                  href="https://mlsanta.github.io/SITB/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    className={styles.teamframe}
+                    ref={pcRef}
+                    src="/img/teamproject_frame_pc.png"
+                    alt='팀프로젝트 pc 프레임'
+                    width={1200}
+                    height={700}
+                  />
+                </Link>
               </div>
               <div className={styles.teamText}>
                 <p><Link href='https://mlsanta.github.io/SITB/'>PC 버전</Link></p>
@@ -140,14 +146,20 @@ const Teamproject = React.forwardRef<HTMLDivElement, TeamprojectProps>(({ onNavi
           <div className={styles.teamInbox2}>
             <div className={styles.teamImgbox}>
               <div className={styles.teamwrap}>
-                <Image
-                  className={styles.teamframe}
-                  ref={mobileRef}
-                  src="/img/teamproject_frame_mobile.png"
-                  alt='팀프로젝트 모바일 프레임'
-                  width={1300}
-                  height={700}
-                />
+                <Link
+                  href="https://mlsanta.github.io/SITB/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    className={styles.teamframe}
+                    ref={mobileRef}
+                    src="/img/teamproject_frame_mobile.png"
+                    alt='팀프로젝트 모바일 프레임'
+                    width={1300}
+                    height={700}
+                  />
+                </Link>
               </div>
               <div className={`${styles.teamText} ${styles.mobileText}`}>
                 <p><Link href='https://mlsanta.github.io/SITB/'>mobile 버전</Link></p>

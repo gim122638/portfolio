@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import styles from './Contact.module.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement | null>(null)
+  const [close, setClose] = useState(false)
 
   useEffect(() => {
     if (!sectionRef.current) return
@@ -50,13 +51,29 @@ const Contact = () => {
       },
     })
     
-  }, [])
+  }, [close])
+
+  const click = () => {
+    if (!sectionRef.current) return
+
+    gsap.to(sectionRef.current, {
+      autoAlpha: 0,
+      y: 20,
+      duration: 0.3,
+      ease: 'power2.out',
+      onComplete: () => setClose(true),
+    })
+  }
+
+  if (close) return null
 
   return (
     <section ref={sectionRef} className={styles.contact}>
+      <p className={styles.contactX} onClick={click}>X</p>
       <p className={styles.contactP}>보이는 화면 너머의 경험을 고민하며, <br/>꾸준히 성장하는 <strong>김예지</strong>입니다.</p>
-      <p>전화번호 : 010-7191-8058</p>
-      <p>이메일 : yj020209@naver.com</p>
+      <p className={styles.contactPs}>전화번호 : 010-7191-8058</p>
+      <p className={styles.contactPs}>이메일 : yj020209@naver.com</p>
+      <p className={styles.contactPs}>Github : https://github.com/gim122638/</p>
     </section>
   )
 }

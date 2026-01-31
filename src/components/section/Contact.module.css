@@ -1,6 +1,6 @@
 .contact{
-    width: 300px;
-    height: 250px;
+    width: clamp(220px, 26vw, 300px);
+    height: clamp(180px, 22vh, 250px);
     position: fixed;
     bottom: 1rem; left: 1rem;
     opacity: 1;
@@ -15,8 +15,17 @@
     text-align: center;
     background-color: rgba(107, 62, 46, 0.85);
     color: #fff;
-
+}
+.contactX{
+    position: absolute;
+    top: 3%; right: 3%;
+    cursor: pointer;
 }
 .contactP{
-    margin-bottom: 10px;
+    margin-bottom: clamp(6px, 1vh, 10px);
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    line-height: 1.4;
+}
+.contactPs{
+    font-size: clamp(0.7rem, 2.3vw, 0.9rem);
 }

@@ -1,7 +1,7 @@
 .hero {
     width: 100%;
     height: 100vh;
-    min-height: 100vh;
+    min-height: 100svh;
     position: relative;
     color: var(--ink-soft);
     display: flex;
@@ -25,7 +25,7 @@
     pointer-events: none;
 
     background:
-        /* 1️⃣ 섬유 결 (세로) */
+        /*  섬유 결 (세로) */
         repeating-linear-gradient(
             90deg,
             rgba(0,0,0,0.018),
@@ -34,7 +34,7 @@
             transparent 6px
         ),
 
-        /* 2️⃣ 섬유 결 (사선) */
+        /* 섬유 결 (사선) */
         repeating-linear-gradient(
             -45deg,
             rgba(0,0,0,0.012),
@@ -43,7 +43,7 @@
             transparent 8px
         ),
 
-        /* 3️⃣ 얼룩 / 번짐 */
+        /* 얼룩 / 번짐 */
         radial-gradient(
             circle at 25% 30%,
             rgba(0,0,0,0.05),
@@ -59,44 +59,59 @@
     opacity: 0.6;
 }
 
-.backImg{
-    opacity: 0.5;
+.container{
     position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.backImg{
+    position: absolute;
+    inset: 0;
     z-index: 0;
-    margin-bottom: 20%;
-    max-width: 1300px;
-    min-width: 800px;
-    max-height: 700px;
+    object-fit: contain;
+    opacity: 0.5;
+    transform: scaleY(0.8); /* 높이 80% */
+    transform-origin: top center;
 }
 
 .shipImg{
     opacity: 0.7;
     position: absolute;
     z-index: 5;
-    bottom: 0; right: 20%;
+    bottom: clamp(3%, 5vh, 6%);
+    right: clamp(8%, 18vw, 18%);
+    width: 32vw;
+    max-width: 700px;
+    height: auto;
     animation: shipFloat 2.8s ease-in-out infinite alternate;
 }
 
 @keyframes shipFloat {
-    from { transform: translateY(1px); }
-    to   { transform: translateY(-2px); }
+    from { transform: translateY(clamp(1px, 0.3vh, 5px)); }
+    to { transform: translateY(clamp(-2px, -0.5vh, -5px)); }
 }
 
+
 .shipWrap{
+    position: absolute;
+    inset: 0;
+    z-index: 5;
     animation: shipani 7s ease-in-out infinite alternate;
 }
 
 @keyframes shipani {
     0%{
         transform:
-            translateX(100px)
+            translateX(clamp(40px, 6vw, 150px))
             translateY(0px)
             rotate(-0.6deg);
     }
     100%{
         transform:
-            translateX(-100px)
-            translateY(2px)
+            translateX(clamp(-40px, -6vw, -150px))
+            translateY(clamp(1px, 0.3vh, 3px))
             rotate(-0.6deg);
     }
 }
@@ -113,36 +128,54 @@
 .herotext{
     position: relative;
     z-index: 3;
-    font-size: 5rem;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+}
+
+.subtext{
+    font-size: clamp(1.2rem, 3vw, 2rem);
 }
 
 .gatWrap {
     position: absolute;
-    top: 40%; left: 58%;
+    top: clamp(30%, 38vh, 42%);
+    left: clamp(45%, 55vw, 60%);
     z-index: 1; 
     opacity: 0.7;
     animation: gatani 5s ease-in-out infinite alternate;
 }
 
+.gat{
+    width: 8vw;
+    max-width: 100px;
+    height: auto;
+}
+
 @keyframes gatani {
     from{
-        transform: translateX(-50px);
+        transform: translateX(clamp(-20px, -5vw, -80px));
     }
     to{
-        transform: translateX(-370px);
+        transform: translateX(clamp(-180px, -18vw, -360px));
     }
 }
 
 .tigerWrap{
     position: absolute;
-    bottom: 0; left: 2%;
-    z-index: 999;
+    bottom: 0;
+    left: clamp(1vw, 2vw, 4vw);
+    z-index: 5;
     animation: tigerani 1s ease-in-out infinite alternate;
+}
+
+.tiger{
+    width: 22vw;
+    max-width: 400px;
+    height: auto;
 }
 
 @keyframes tigerani {
     from{
-        transform: translateY(5px);
+        transform: translateY(clamp(3px, 0.8vh, 10px));
     }
     to{
         transform: translateY(0);
@@ -151,14 +184,19 @@
 
 .scroll{
     position: absolute;
-    bottom: 5%; left: 50%;
+    bottom: 4%; left: 50%;
     transform: translateX(-50%);
     animation: scrollani 1s ease-in-out infinite alternate;
 }
 
+.scrollIcon{
+    width: 2.2rem;
+    height: auto;
+}
+
 @keyframes scrollani {
     from{
-        transform: translateY(10px);
+        transform: translateY(clamp(6px, 1.2vh, 14px));
     }
     to{
         transform: translateY(0);

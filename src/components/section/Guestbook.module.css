@@ -1,24 +1,37 @@
 .guestbook{
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100svh;
     position: relative;
     overflow: hidden;
 }
 
 .backImg{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     opacity: 0.7;
+    object-fit: cover;
     position: absolute;
+    inset: 0;
     z-index: 0;
+}
+@media (min-width: 1024px){
+    .backImg{
+        height: 100%;
+        object-position: center top;
+    }
 }
 
 .mountainWrap{
     position: absolute;
-    bottom: -11%; right: -1%;
+    bottom: -8%; right: -3%;
     z-index: 2;
+    width: clamp(280px, 40vw, 850px);
     animation: mountainani 2s ease-in-out infinite alternate;
+}
+
+.mountain{
+    width: 100%;
+    height: auto;
 }
 
 @keyframes mountainani {
@@ -45,6 +58,12 @@
     align-items: center
 }
 
+@media (max-width: 480px){
+    .nav{
+        display: none;
+    }
+}
+
 .nav p{
     font-size: 2rem;;
     transition: all 0.3s linear;
@@ -59,14 +78,14 @@
     text-shadow: 1px 1px 2px rgba(74, 42, 31, 0.6);
 }
 .main{
-    width: calc(100vw - 15rem);
+    width: 100%;
     height: 100%;
 }
 
 .title{
     position: relative;
     text-align: center;
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 5vw, 3rem);
     z-index: 2;
     color: rgba(124, 108, 103, 0.85);
     cursor: pointer;
@@ -78,7 +97,7 @@
 
 .line{
     width: 75%;
-    height: 4px;
+    height: 0.2rem;
     background-color: rgba(116, 71, 55, 0.85);
     margin-top: 0.5rem;
     position: absolute;
@@ -94,25 +113,33 @@
     gap: 2rem;
 }
 .guestbookInbox{
+    width: 95%;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
+    flex-wrap: nowrap;
     z-index: 2;
 }
+@media (max-width: 480px){
+    .guestbookInbox{
+         flex-wrap: wrap;
+    }
+}
+
 .guestbookText{
-    width: 30rem;
+    width: 100%;
+    max-width: 480px;
     text-align: center;
-    margin-left: 10rem;
+    margin-top: 2rem;
 }
-.guestbookText h4{
-    font-size: 5rem;
-}
+
 .guestbookTextP1{
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    margin-bottom: 0.8rem;
 }
 .guestbookTextP2{
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 4vw, 2rem);
 }
 .guestbookText a{
     list-style: none;
@@ -123,10 +150,31 @@
     color: rgba(116, 71, 55, 0.85);
 }
 .guestbookImgbox{
-    width: 60rem;
+    width: min(100%, 60rem);
+    margin: 3rem 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-    margin-right: 2rem;
+    margin-top: 3rem;
+}
+@media (max-width: 480px){
+    .eromImgbox, .woodinImgbox{
+        margin-top: none;
+    }
+}
+
+.frameBox {
+    width: 100%;
+    max-width: 1800px;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+}
+
+.frameImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
